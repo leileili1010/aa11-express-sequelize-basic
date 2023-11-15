@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.FLOAT,
       validate: {
         isPositive(value) {
-          return value > 0
+          if (value < 0) throw new Error("Values must be greatere than 0.");
         }
       }
     },
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.FLOAT,
       validate: {
         isPositive(value) {
-          return value > 0
+          if (value < 0) throw new Error("Values must be greatere than 0.");
         }
       }
     },
